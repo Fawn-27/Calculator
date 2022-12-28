@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Calculator</title>
+    <meta
+      name="description"
+      content="Calculator - Features: Enter Numbers/Operators From Keyboard, Addition (+), Subtraction (-), Multiplication (*), Division (/), Exponents(**), Paranthesis, Square Root(√)"
+    />
+    <meta name="author" content="Fawn" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="kindpng_772110.png">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      console.clear();
+      console.log("Calculator - Features: Enter Numbers/Operators From Keyboard, Addition (+), Subtraction (-), Multiplication (*), Division (/), Exponents(**), Paranthesis, Square Root(√)");
+      console.log("You can directly type text into the calculator's display.");
+      console.log("Your equation and answer will also be displayed in the console.");
+      console.warn("To use the square root function, first type the number and then the square root symbol.");
+    </script>
+  </head>
+  <body>
+    <h1>Calculator</h1>
+    
+    <div class="form">
+      <form
+        name="calculator"
+        onsubmit="calculator.answer.value = eval(calculator.answer.value);console.log(eval(calculator.answer.value))"
+      >
+        <input id="calc" type="text" name="answer"/> <br /><br />
+        <input
+          type="button"
+          value="("
+          class="dif_color"
+          onclick="calculator.answer.value += '(';console.log(calculator.answer.value) "
+        />
+        <input
+          type="button"
+          value="7"
+          onclick="calculator.answer.value += '7';console.log(calculator.answer.value) "
+        />
+        <input
+          type="button"
+          value="8"
+          onclick="calculator.answer.value += '8';console.log(calculator.answer.value) "
+        />
+        <input
+          type="button"
+          value="9"
+          onclick="calculator.answer.value += '9';console.log(calculator.answer.value)"
+        />
+        <input
+          type="button"
+          value="+"
+          onclick="calculator.answer.value += '+';console.log(calculator.answer.value) "
+        />
+        <br /><br />
+        <input
+          type="button"
+          value=")"
+          class="dif_color"
+          onclick="calculator.answer.value += ')';console.log(calculator.answer.value) "
+        />
+        <input
+          type="button"
+          value="4"
+          onclick="calculator.answer.value += '4';console.log(calculator.answer.value) "
+        />
+        <input
+          type="button"
+          value="5"
+          onclick="calculator.answer.value += '5';console.log(calculator.answer.value) "
+        />
+        <input
+          type="button"
+          value="6"
+          onclick="calculator.answer.value += '6';console.log(calculator.answer.value) "
+        />
+        <input
+          type="button"
+          value="-"
+          onclick="calculator.answer.value += '-';console.log(calculator.answer.value) "
+        />
+        <br /><br />
+        <input
+          type="button"
+          value="**"
+          class="dif_color"
+          onclick="calculator.answer.value += '**';console.log(calculator.answer.value) "
+        />
+        <input
+          type="button"
+          value="1"
+          onclick="calculator.answer.value += '1';console.log(calculator.answer.value) "
+        />
+        <input
+          type="button"
+          value="2"
+          onclick="calculator.answer.value += '2';console.log(calculator.answer.value) "
+        />
+        <input
+          type="button"
+          value="3"
+          onclick="calculator.answer.value += '3';console.log(calculator.answer.value) "
+        />
+        <input
+          type="button"
+          value="*"
+          onclick="calculator.answer.value += '*';console.log(calculator.answer.value) "
+        />
+        <br /><br />
+        <input
+          type="button"
+          value="√"
+          class="dif_color"
+          onclick="calculator.answer.value += '**(1/2)';console.log(calculator.answer.value) "
+        />
+        <input
+          type="button"
+          value="."
+          onclick="calculator.answer.value += '.' ;console.log(calculator.answer.value)"
+        />
+        <input
+          type="button"
+          value="0"
+          onclick="calculator.answer.value += '0';console.log(calculator.answer.value) "
+        />
+        <input
+          type="button"
+          value="="
+          id="equals"
+          onclick="console.log(calculator.answer.value);console.log(eval(calculator.answer.value)); calculator.answer.value = eval(calculator.answer.value)"
+        />
+        <input
+          type="button"
+          value="/"
+          onclick="calculator.answer.value += '/';console.log(calculator.answer.value) "
+        />
+        <br /><br />
+        <input
+          type="button"
+          value="Clear All"
+          id="clear"
+          onclick="calculator.answer.value = ''"
+        />
+        <input
+          type="button"
+          value="Delete"
+          id="delete"
+          onclick="calculator.answer.value = calculator.answer.value.substring(0, calculator.answer.value.length - 1)"
+        />
+      </form>
+      <br />
+      <p>Look at the console for more information.</p>
+    </div>
+    <script>
+    var formElement = document.querySelector("form");
+    var equalsElement = document.querySelector("#equals");
+    formElement.addEventListener("submit", handleFormSubmit);
+
+    function handleFormSubmit(event) {
+      // Stops the page from reloading
+      event.preventDefault();
+      // Click the equal key
+    equalsElement.click();
+    }
+    </script>
+  </body>
+</html>
